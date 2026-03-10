@@ -168,7 +168,7 @@ function DetailPanel({ event, onClose }: { event: SeerahEvent; onClose: () => vo
 
 function SearchBar({ onSearch }: { onSearch: (q: string) => void }) {
   const [val, setVal] = useState("");
-  const t = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const handle = (v: string) => { setVal(v); clearTimeout(t.current); t.current = setTimeout(() => onSearch(v), 350); };
   return (
     <div className="search-wrap">
