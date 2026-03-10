@@ -196,7 +196,7 @@ export default function HadithPage() {
   const [hasSearched,  setHasSearched]  = useState(false);
   const [error,        setError]        = useState("");
   const [cacheStatus,  setCacheStatus]  = useState<Record<string,number>>({});
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
